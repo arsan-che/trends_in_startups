@@ -22,3 +22,17 @@ WHERE stage = 'Seed';
 -- Find the year the oldest company was founded
 SELECT MIN(founded)
 FROM startups;
+
+-- Calculate the average valuation of all companies
+SELECT AVG(valuation)
+FROM startups;
+
+-- Calculate the average valuation for each category
+SELECT AVG(valuation)
+FROM startups
+GROUP BY category;
+
+-- Calculate the average valuation for each category, rounded to two decimal places
+SELECT ROUND(AVG(valuation), 2)
+FROM startups
+GROUP BY category;
