@@ -54,3 +54,15 @@ FROM startups
 GROUP BY category
 HAVING COUNT(*) > 3
 ORDER BY 2 DESC;
+
+-- Calculate the average number of employees for startups in each location
+SELECT location, AVG(employees)
+FROM startups
+GROUP BY 1;
+
+-- Calculate the average number of employees for startups in each location with averages above 500
+SELECT location, AVG(employees)
+FROM startups
+GROUP BY location
+HAVING AVG(employees) > 500;
+
