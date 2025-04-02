@@ -36,3 +36,21 @@ GROUP BY category;
 SELECT ROUND(AVG(valuation), 2)
 FROM startups
 GROUP BY category;
+
+-- Calculate and order the average valuation for each category, rounded to two decimal places, from highest to lowest
+SELECT category, ROUND(AVG(valuation), 2)
+FROM startups
+GROUP BY 1
+ORDER BY 2 DESC;
+
+-- Count the number of companies in each category
+SELECT category, COUNT(*)
+FROM startups
+GROUP BY category;
+
+-- Count the number of companies in each category with more than three companies, ordered from most to least
+SELECT category, COUNT(*)
+FROM startups
+GROUP BY category
+HAVING COUNT(*) > 3
+ORDER BY 2 DESC;
